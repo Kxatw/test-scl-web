@@ -1,0 +1,714 @@
+<!DOCTYPE html>
+<html lang="en">
+  <!--start head-->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" /> 
+    <link rel="shortcut icon" type="x-icon" href="pic.vid/scl logo.jpg">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+    <title>VIDYA MANDIR SECONDARY SCHOOL</title>
+    <style>
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: url('pic.vid/background.jpg') no-repeat center center fixed; 
+            background-size: cover;
+            backdrop-filter: blur(10px);
+        }
+        header {
+            background: transparent;
+            backdrop-filter: blur(10px);
+            color: white;
+            padding: 5px 0;
+            width: 100%;
+            text-align: left;
+        }
+                /* Desktop Styles */
+                @media (min-width: 1024px) {
+            .container {
+                width: 70%;
+            }
+        .slider {
+            width: 80%;
+            overflow: hidden;
+            position: relative;
+            background: transparent;
+            backdrop-filter: blur(10px);
+            left: 160px;
+        }
+        .news-events {
+            padding: 20px;
+            background: transparent;
+            backdrop-filter: blur(10px);
+            max-width: 1200px;
+            margin: 20px auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .news-events h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 2em;
+            color: #fff;
+        }
+        .news-item {
+            margin-bottom: 20px;
+            padding: 20px;
+            background: transparent;
+            backdrop-filter: blur(10px);
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .news-item h3 {
+            margin-top: 0;
+            color: #4CAF50;
+        }
+        .news-item p {
+            margin: 10px 0 0;
+            color: #333;
+        }
+        .news-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 16px cyan;
+        }
+        .footer-container {
+    display: flex;
+    justify-content: space-between;
+    background-color: transparent;
+    backdrop-filter: blur(10px);
+    color: #fff;
+    padding: 20px;
+    flex-wrap: wrap;
+}
+.footer-container:hover {
+            box-shadow: 0 6px 16px cyan;
+        }
+.footer-section {
+    flex: 1;
+    min-width: 200px;
+    margin: 10px;
+}
+
+.school-logo {
+    max-width: 100%;
+    height: auto;
+}
+
+.footer-section h3 {
+    margin-bottom: 10px;
+    color: #f1c40f;
+}
+.footer-section h4{
+  margin-bottom: 10px;
+  color: #f1c40f;
+}
+.footer-section p, .footer-section a {
+    margin: 5px 0;
+    color: #bbb;
+    text-decoration: none;
+}
+
+.footer-section a:hover {
+    color: #f1c40f;
+}
+
+.footer-section ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin: 5px 0;
+}
+
+.footer-section .social-media a {
+    display: inline-block;
+    margin: 5px;
+}
+
+.footer-section .social-media img {
+    width: 24px;
+    height: 24px;
+}
+nav {
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            align-items: center;
+        }
+
+        .Btn {
+  width: 45px;
+  height: 45px;
+  background: linear-gradient(#44ea76, #39fad7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  cursor: pointer;
+  position: relative;
+  border: none;
+}
+
+
+.arrow path {
+  fill: white;
+}
+
+.text {
+  font-size: 0.7em;
+  width: 100px;
+  position: absolute;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  bottom: -18px;
+  opacity: 0;
+  transition-duration: .7s;
+}
+
+.Btn:hover .text {
+  opacity: 1;
+  transition-duration: .7s;
+}
+
+.Btn:hover .arrow {
+  animation: slide-in-bottom .7s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+@keyframes slide-in-bottom {
+  0% {
+    transform: translateY(10px);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+  ::-webkit-scrollbar{
+    width: 15px;
+}
+  ::-webkit-scrollbar-track{
+    background: #000000;
+  }
+  ::-webkit-scrollbar-thumb{
+    background: linear-gradient(#642bff, #ff22e6);
+    border-radius: 10px;
+}
+.btn:link,
+.btn:visited {
+ text-transform: uppercase;
+ text-decoration: none;
+ color: #fff;
+ padding: 10px 30px;
+ border: 1px solid transparent;
+ border-radius: 1000px;
+ display: inline-block;
+ transition: all .2s;
+ position: relative;
+}
+
+.btn:hover {
+ transform: translateY(-5px);
+ box-shadow: 0 10px 20px cyan;
+}
+
+.btn:active {
+ transform: translateY(-3px);
+}
+
+.btn::after {
+ content: "";
+ display: inline-block;
+ height: 100%;
+ width: 100%;
+ border-radius: 100px;
+ top: 0;
+ left: 0;
+ position: absolute;
+ z-index: -1;
+ transition: all .3s;
+}
+
+.btn:hover::after {
+ background-color: rgb(0, 238, 255);
+ transform: scaleX(1.4) scaleY(1.5);
+ opacity: 0;
+}
+.spinner {
+  font-size: 28px;
+  position: relative;
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+}
+
+.spinner.center {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+}
+
+.spinner .spinner-blade {
+  position: absolute;
+  left: 0.4629em;
+  bottom: 0;
+  width: 0.074em;
+  height: 0.2777em;
+  border-radius: 0.0555em;
+  background-color: transparent;
+  -webkit-transform-origin: center -0.2222em;
+  -ms-transform-origin: center -0.2222em;
+  transform-origin: center -0.2222em;
+  animation: spinner-fade9234 1s infinite linear;
+}
+
+.spinner .spinner-blade:nth-child(1) {
+  -webkit-animation-delay: 0s;
+  animation-delay: 0s;
+  -webkit-transform: rotate(0deg);
+  -ms-transform: rotate(0deg);
+  transform: rotate(0deg);
+}
+
+.spinner .spinner-blade:nth-child(2) {
+  -webkit-animation-delay: 0.083s;
+  animation-delay: 0.083s;
+  -webkit-transform: rotate(30deg);
+  -ms-transform: rotate(30deg);
+  transform: rotate(30deg);
+}
+
+.spinner .spinner-blade:nth-child(3) {
+  -webkit-animation-delay: 0.166s;
+  animation-delay: 0.166s;
+  -webkit-transform: rotate(60deg);
+  -ms-transform: rotate(60deg);
+  transform: rotate(60deg);
+}
+
+.spinner .spinner-blade:nth-child(4) {
+  -webkit-animation-delay: 0.249s;
+  animation-delay: 0.249s;
+  -webkit-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  transform: rotate(90deg);
+}
+
+.spinner .spinner-blade:nth-child(5) {
+  -webkit-animation-delay: 0.332s;
+  animation-delay: 0.332s;
+  -webkit-transform: rotate(120deg);
+  -ms-transform: rotate(120deg);
+  transform: rotate(120deg);
+}
+
+.spinner .spinner-blade:nth-child(6) {
+  -webkit-animation-delay: 0.415s;
+  animation-delay: 0.415s;
+  -webkit-transform: rotate(150deg);
+  -ms-transform: rotate(150deg);
+  transform: rotate(150deg);
+}
+
+.spinner .spinner-blade:nth-child(7) {
+  -webkit-animation-delay: 0.498s;
+  animation-delay: 0.498s;
+  -webkit-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  transform: rotate(180deg);
+}
+
+.spinner .spinner-blade:nth-child(8) {
+  -webkit-animation-delay: 0.581s;
+  animation-delay: 0.581s;
+  -webkit-transform: rotate(210deg);
+  -ms-transform: rotate(210deg);
+  transform: rotate(210deg);
+}
+
+.spinner .spinner-blade:nth-child(9) {
+  -webkit-animation-delay: 0.664s;
+  animation-delay: 0.664s;
+  -webkit-transform: rotate(240deg);
+  -ms-transform: rotate(240deg);
+  transform: rotate(240deg);
+}
+
+.spinner .spinner-blade:nth-child(10) {
+  -webkit-animation-delay: 0.747s;
+  animation-delay: 0.747s;
+  -webkit-transform: rotate(270deg);
+  -ms-transform: rotate(270deg);
+  transform: rotate(270deg);
+}
+
+.spinner .spinner-blade:nth-child(11) {
+  -webkit-animation-delay: 0.83s;
+  animation-delay: 0.83s;
+  -webkit-transform: rotate(300deg);
+  -ms-transform: rotate(300deg);
+  transform: rotate(300deg);
+}
+
+.spinner .spinner-blade:nth-child(12) {
+  -webkit-animation-delay: 0.913s;
+  animation-delay: 0.913s;
+  -webkit-transform: rotate(330deg);
+  -ms-transform: rotate(330deg);
+  transform: rotate(330deg);
+}
+
+@keyframes spinner-fade9234 {
+  0% {
+    background-color: #69717d;
+  }
+
+  100% {
+    background-color: transparent;
+  }
+}
+.width-100{
+    width: 100%;
+    float: left;
+}
+.container{
+  width: 1500px;
+  margin: 0px auto;
+}
+.top-header{
+   background: transparent;
+   backdrop-filter: blur(30px);
+   padding: 5px 0px;
+   border-bottom: 1px solid #3131315e;
+}
+html{
+  scroll-behavior: smooth;
+}
+.back-to-top{
+  position: fixed;
+  bottom: 0rem;
+  right: 0rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #dc143c;
+  border-radius: 0.5rem;
+  padding: 0.2rem;
+  text-decoration: none;
+  transition: 0.2s ease-out;
+}
+.back-to-top span{
+  color: #0c0344;
+  font-size: 2rem;
+  transition: 0.2s ease-out;
+}
+.back-to-top:hover{
+  background-color: #f00433;
+
+}
+.back-to-top:hover span{
+  transform: translateY(-4px);
+  color: #fff;
+}
+.news-list{
+  background: transparent;
+  backdrop-filter: blur(30px);
+  color: #fff;
+  padding: 6px;
+  font-size: 20px;
+}
+.headquote{
+    font-size: 18px;
+    color: #fff;
+    width: 80%;
+}
+main{
+  width: 60%;
+  height: 500px;
+  margin-top: 100px;
+  margin: auto;
+  box-shadow: 0px 0px 3px grey;
+  position: relative;
+  overflow: hidden;
+}
+.slide{
+    width: 100%;
+    height: 100%;
+    transition: 0.5s;
+    position: absolute;
+}
+.nav{
+  text-align: center;
+  margin-top: 15px;
+}
+.nav button {
+  background-color: transparent;
+  color: #fff;
+  border-radius: 10em;
+  font-size: 17px;
+  font-weight: 600;
+  padding: 1em 2em;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  border: 1px solid transparent;
+  box-shadow: 0 0 0 0 black;
+}
+.nav button:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 16px cyan;
+};
+.nav button:active {
+  transform: translateY(2px) translateX(1px);
+  box-shadow: 0 0 0 0 black;
+};
+@media screen and (max-width: 768px) { /* Media query for tablet and smaller devices */
+            header, .news-events, .footer-container {
+                padding: 10px;
+            }
+            .news-events h2 {
+                font-size: 1.5em;
+            }
+            .news-item h3 {
+                font-size: 1.2em;
+            }
+        }
+        @media screen and (max-width: 480px) { /* Media query for mobile devices */
+            .footer-container {
+                flex-direction: column;
+                align-items: center;
+            }
+            .footer-section {
+                min-width: 100%;
+                text-align: center;
+            }
+            .footer-section h3, .footer-section h4 {
+                font-size: 1.2em;
+            }
+        }
+    </style>
+</head>
+
+
+
+<body>
+    <header>
+        <img src="pic.vid/logo.jpg"></a>
+        <nav>
+      
+            <a href="Admission form.html" class="btn">      
+<i class="fa-solid fa-table-list">&nbsp; </i>Admission Form
+</a> 
+
+<a href="gallery.html" class="btn">      
+  <i class="fa-solid fa-image"></i>&nbsp; Gallery
+  </a>     
+
+
+        </nav>
+    </header>
+      <div class="width-100 top-header">
+      <div class="container">
+      <div class="width-100">
+        <b class="news-list">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;NEWS:</b>
+        <marquee class="headquote">!!&nbsp;We have civil engineering&nbsp;!!</marquee>
+      </div>
+      </div>
+      </div>
+      <br>
+  <br>
+  
+         <main>
+          <img src="pic.vid/slider.jpg" class="slide" alt="">
+          <img src="pic.vid/slider.jpg" class="slide" alt="">
+         </main>
+       <div class="nav">
+        <button onclick="goPrev()">
+          Prev
+        </button>
+        <button onclick="goNext()">
+          Next
+        </button>
+       </div>
+
+        
+            
+        </div>
+    </div>
+    <div class="news-events">
+        <h2>Latest News and Events</h2>
+        <div class="news-item">
+            <h3>Event Title 1</h3>
+            <p>Description of event 1.</p>
+        </div>
+        <div class="news-item">
+            <h3>Event Title 2</h3>
+            <p>Description of event 2.</p>
+        </div>
+        <div class="news-item">
+            <h3>Event Title 3</h3>
+            <p>Description of event 3.</p>
+        </div>
+
+
+
+           <a href="#" class="back-to-top">
+            <span class="material-symbols-outlined">
+              keyboard_double_arrow_up
+              </span>
+           </a>
+
+
+
+    </div>
+
+
+      <div id="loader" class="spinner center">
+        <div class="spinner-blade"></div>
+        <div class="spinner-blade"></div>
+        <div class="spinner-blade"></div>
+        <div class="spinner-blade"></div>
+        <div class="spinner-blade"></div>
+        <div class="spinner-blade"></div>
+        <div class="spinner-blade"></div>
+        <div class="spinner-blade"></div>
+        <div class="spinner-blade"></div>
+        <div class="spinner-blade"></div>
+        <div class="spinner-blade"></div>
+        <div class="spinner-blade"></div>
+    </div>
+
+</body>
+
+
+
+
+
+<footer>
+
+    <div class="footer-container">
+        <div class="footer-section">
+            <a  href="index.html"> <img src="pic.vid/scl logo.jpg"  class="school-logo"></a>
+        </div>
+        <div class="footer-section">
+          <h3><i class="fa-solid fa-location-dot"></i> Location</h3>
+          <p>Purano naikap-13, Kathmandu</p>
+          <br>
+            <h3>Contact Us</h3>
+            <p><i class="fa-solid fa-phone"></i> Phone: 
+              <br>
+            +977 00-0000000, 00-0000000</p>
+            <p><i class="fa-solid fa-envelope"></i> Email: 
+              <br>
+              info@school.com</p>
+        </div>
+        <div class="footer-section">
+            <h3>Menu</h3>
+            <ul>
+                <li><a href="gallery.html"><i class="fa-regular fa-images"></i> Gallery</a></li> <br>
+                <li><a href="Admission form.html"><i class="fa-solid fa-table-list"></i> Admission form</a></li><br>
+  
+            </ul>
+        </div>
+        <div class="footer-section">
+            <h3>Follow Us</h3>
+            <div class="social-media">
+              
+            </b>
+                <br>
+            <a href="#">
+                
+                <i class="fab fa-facebook"></i> 
+            </a>
+            
+            <a href="#">
+                
+                <i class="fa-brands fa-square-instagram"></i>
+            </a>
+            </div>
+
+        </div>
+
+        <div class="footer-section">
+            <h3>School Hours</h3>
+            <p>Sunday-Friday – 10:00 AM to 4:00 PM / 8:30 AM to 4:10 PM</p>
+  
+        </div>
+
+        
+          <h4>© Vidya Mandir School. All rights reserved</h4>
+          
+      
+      
+
+    </div>
+
+  
+  </footer>
+ 
+
+
+
+
+  <script>
+
+    window.addEventListener('load', function() {
+  var loader = document.getElementById('loader');
+  var content = document.getElementById('content');
+
+  
+  setTimeout(function() {
+      loader.style.display = 'none';
+      
+  }, 100); 
+});
+
+  </script>
+
+
+
+>
+<script>
+  const slides = document.querySelectorAll(".slide")
+  var counter = 0;
+  // console.log(slides)
+  slides.forEach(
+    (slide, index) => {
+      slide.style.left = ${index * 100}%
+    }
+  )
+
+  const goPrev = () => {
+  counter--
+  slideImage()
+}
+
+const goNext = () => {
+  counter++
+  slideImage()
+}
+
+
+  const slideImage = () => {
+    slides.forEach(
+      (slide) => {
+              slide.style.transform = translateX(-${counter * 100}%)
+      }
+    )
+  }
+</script>
+
+
+
+</html>

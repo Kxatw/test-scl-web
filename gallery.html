@@ -1,0 +1,711 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery</title>
+    <link rel="shortcut icon" type="x-icon" href="pic.vid/scl logo.jpg">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" /> 
+</head>
+
+<style>
+    body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    display: block;
+    background: url('pic.vid/background.jpg') no-repeat center center fixed; 
+    background-size: cover;
+    backdrop-filter: blur(10px);
+}
+html{
+  scroll-behavior: smooth;
+}
+.back-to-top{
+  position: fixed;
+  bottom: 0rem;
+  right: 0rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #dc143c;
+  border-radius: 0.5rem;
+  padding: 0.2rem;
+  text-decoration: none;
+  transition: 0.2s ease-out;
+}
+.back-to-top span{
+  color: #fff;
+
+  font-size: 2rem;
+  transition: 0.2s ease-out;
+}
+.back-to-top:hover{
+  background-color: #be1a3b;
+}
+.back-to-top:hover span{
+  transform: translateY(-4px);
+}
+header-1 {
+    background-color: transparent;
+    backdrop-filter: blur(10px);
+    color: #fff;
+    padding: 5px 0;
+    width: 100%;
+    text-align: left;
+}
+header-2 {
+  text-align: center;
+  color: #fff;
+}
+::-webkit-scrollbar{
+    width: 15px;
+}
+  ::-webkit-scrollbar-track{
+    background: #000;
+  }
+  ::-webkit-scrollbar-thumb{
+    background: linear-gradient(#642bff, #ff22e6);
+    border-radius: 10px;
+}
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 2rem;
+}
+
+.gallery-item {
+    margin: 1rem;
+    text-align: center;
+    justify-content: center;
+}
+
+.gallery-item img {
+    max-width: 100%;
+    height: auto;
+    border: 2px solid #1735e4;
+}
+
+@media (max-width: 600px) {
+    .gallery {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+.lightbox {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.lightbox img {
+    max-width: 90%;
+    max-height: 90%;
+}
+.backToTop {
+    display: none; 
+    height: 50px;
+    width: 50px;
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 3;
+    font-size: 2rem;
+    border: none;
+    outline: none;
+    background-color: rgb(15, 15, 15);
+    color: rgb(179, 255, 0);
+    cursor: pointer;
+    border-radius: 50%;
+    transition: opacity 0.3s; 
+  }
+  
+  .backToTop:hover {
+    background-color: rgb(179, 255, 0);
+    color: #111111;
+    border: 2px solid rgb(179, 255, 0);
+    font-size: 2rem;
+  }
+  #mu-gallery {
+    display: inline;
+    padding: 50px;
+    float: left;
+    padding: 100px ;
+}
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    background-color: transparent;
+    color: #fff;
+    padding: 20px;
+    flex-wrap: wrap;
+}
+.footer-container:hover {
+            box-shadow: 0 4px 16px cyan;
+        }
+.footer-section {
+    flex: 1;
+    min-width: 200px;
+    margin: 10px;
+}
+
+.school-logo {
+    max-width: 100%;
+    height: auto;
+}
+
+.footer-section h3 {
+    margin-bottom: 10px;
+    color: #f1c40f;
+}
+
+.footer-section p, .footer-section a {
+    margin: 5px 0;
+    color: #bbb;
+    text-decoration: none;
+}
+
+.footer-section a:hover {
+    color: #f1c40f;
+}
+
+.footer-section ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin: 5px 0;
+}
+
+.footer-section .social-media a {
+    display: inline-block;
+    margin: 5px;
+}
+
+.footer-section .social-media img {
+    width: 24px;
+    height: 24px;
+}
+.mu-single-gallery-img:hover{
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgb(255, 238, 0);
+}
+.btn:link,
+.btn:visited {
+ text-transform: uppercase;
+ text-decoration: none;
+ color: #fff;
+ padding: 10px 30px;
+ border: 1px solid transparent;
+ border-radius: 1000px;
+ display: inline-block;
+ transition: all .2s;
+ position: relative;
+ left: 500px;
+ bottom: 50px;
+}
+
+.btn:hover {
+ transform: translateY(-5px);
+ box-shadow: 0 10px 20px cyan;
+}
+
+.btn:active {
+ transform: translateY(-3px);
+}
+
+.btn::after {
+ content: "";
+ display: inline-block;
+ height: 100%;
+ width: 100%;
+ border-radius: 100px;
+ top: 0;
+ left: 0;
+ position: absolute;
+ z-index: -1;
+ transition: all .3s;
+}
+
+.btn:hover::after {
+ background-color: rgb(0, 238, 255);
+ transform: scaleX(1.4) scaleY(1.5);
+ opacity: 0;
+}
+.back-to-top{
+  position: fixed;
+  bottom: 0rem;
+  right: 0rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #dc143c;
+  border-radius: 0.5rem;
+  padding: 0.2rem;
+  text-decoration: none;
+  transition: 0.2s ease-out;
+}
+.back-to-top span{
+  color: #0c0344;
+  font-size: 2rem;
+  transition: 0.2s ease-out;
+}
+.back-to-top:hover{
+  background-color: #f00433;
+
+}
+.back-to-top:hover span{
+  transform: translateY(-4px);
+  color: #fff;
+}
+</style>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+    const galleryItems = document.querySelectorAll('.gallery-item img');
+    galleryItems.forEach(item => {
+        item.addEventListener('click', () => {
+            const lightbox = document.createElement('div');
+            lightbox.classList.add('lightbox');
+            document.body.appendChild(lightbox);
+            const img = document.createElement('img');
+            img.src = item.src;
+            lightbox.appendChild(img);
+            lightbox.addEventListener('click', () => {
+                document.body.removeChild(lightbox);
+            });
+        });
+    });
+});
+
+</script>
+<body>
+    <header-1>
+      <img src="pic.vid/logo.jpg"></a>
+      
+          
+          <!--pic chai 370px × 220px ma hunu paryo-->
+    </header-1>
+    <header-2>
+      <nav>
+        <h1><i class="fa-solid fa-image"></i> Gallery</h1>
+        <a href="index.html" class="btn">      
+          <i class="fa-solid fa-house"></i>&nbsp;Home
+          </a> 
+          <br>
+        </nav>
+    </header-2>
+    <section id="mu-gallery">
+        <div class="container">
+            <div class="row">
+                <div class="mu-gallery body">
+                    <ul id="mixit-container" class="row"> </ul>
+            <li class="col-md-4 col-sm-6 col-xs-12 mix lab" style="display: inline-block;">
+        <div class="mu-single-gallery-img">
+            <a href="#"><img alt="img" src="pic.vid/test-3.jpg"></a>
+          </div>
+          <div class="mu-single-gallery-info">
+            <div class="mu-single-gallery-info-inner">
+              <h4>Image Title</h4>
+              <p>....</p>
+              <a href="pic.vid/test-3.jpg" data-fancybox-group="gallery" class="fancybox"><span class="fa fa-eye"></span></a>
+              <a href="#" class="aa-link"><span class="fa fa-link"></span></a>
+            </div>
+          </div>
+        </li>
+
+        &nbsp;
+  
+        <li class="col-md-4 col-sm-6 col-xs-12 mix lab" style="display: inline-block;">
+          <div class="mu-single-gallery-img">
+            <a href="#"><img alt="img" src="pic.vid/test-2.jpg"></a>
+          </div>
+          <div class="mu-single-gallery-info">
+            <div class="mu-single-gallery-info-inner">
+              <h4>Image Title</h4>
+              <p>....</p>
+              <a href="pic.vid/test-2.jpg" data-fancybox-group="gallery" class="fancybox"><span class="fa fa-eye"></span></a>
+              <a href="#" class="aa-link"><span class="fa fa-link"></span></a>
+            </div>
+          </div>
+        </li>
+
+        &nbsp;
+
+        <li class="col-md-4 col-sm-6 col-xs-12 mix lab" style="display: inline-block;">
+        <div class="mu-single-gallery-img">
+            <a href="#"><img alt="img" src="pic.vid/test-4.jpg"></a>
+          </div>
+          <div class="mu-single-gallery-info">
+            <div class="mu-single-gallery-info-inner">
+              <h4>Image Title</h4>
+              <p>....</p>
+              <a href="pic.vid/test-4.jpg" data-fancybox-group="gallery" class="fancybox"><span class="fa fa-eye"></span></a>
+              <a href="#" class="aa-link"><span class="fa fa-link"></span></a>
+            </div>
+          </div>
+        </li>
+
+        &nbsp;
+
+        <li class="col-md-4 col-sm-6 col-xs-12 mix lab" style="display: inline-block;">
+          <div class="mu-single-gallery-img">
+            <a href="#"><img alt="img" src="pic.vid/test-5.jpg"></a>
+          </div>
+          <div class="mu-single-gallery-info">
+            <div class="mu-single-gallery-info-inner">
+              <h4>Image Title</h4>
+              <p>....</p>
+              <a href="pic.vid/test-5.jpg" data-fancybox-group="gallery" class="fancybox">></a>
+              <a href="#" class="aa-link"></a>
+            </div>
+          </div>
+        </li>
+
+        &nbsp;
+
+          <li class="col-md-4 col-sm-6 col-xs-12 mix lab" style="display: inline-block;">
+          <div class="mu-single-gallery-img">
+            <a href="#"><img alt="img" src="pic.vid/test-6.jpg"></a>
+          </div>
+          <div class="mu-single-gallery-info">
+            <div class="mu-single-gallery-info-inner">
+              <h4>Image Title</h4>
+              <p>....</p>
+              <a href="pic.vid/test-6.jpg" data-fancybox-group="gallery" class="fancybox"><span class="fa fa-eye"></span></a>
+              <a href="#" class="aa-link"><span class="fa fa-link"></span></a>
+            </div>
+          </div>
+          </li>
+
+          &nbsp;
+
+          <li class="col-md-4 col-sm-6 col-xs-12 mix lab" style="display: inline-block;">
+          <div class="mu-single-gallery-img">
+            <a href="#"><img alt="img" src="pic.vid/test-7.jpg"></a>
+          </div>
+          <div class="mu-single-gallery-info">
+            <div class="mu-single-gallery-info-inner">
+              <h4>Image Title</h4>
+              <p>....</p>
+              <a href="pic.vid/test-7.jpg" data-fancybox-group="gallery" class="fancybox"><span class="fa fa-eye"></span></a>
+              <a href="#" class="aa-link"><span class="fa fa-link"></span></a>
+            </div>
+          </div>
+          </li>
+
+          &nbsp;
+
+          <li class="col-md-4 col-sm-6 col-xs-12 mix lab" style="display: inline-block;">
+          <div class="mu-single-gallery-img">
+            <a href="#"><img alt="img" src="pic.vid/test-8.jpg"></a>
+          </div>
+          <div class="mu-single-gallery-info">
+            <div class="mu-single-gallery-info-inner">
+              <h4>Image Title</h4>
+              <p>....</p>
+              <a href="pic.vid/test.jpg" data-fancybox-group="gallery" class="fancybox"><span class="fa fa-eye"></span></a>
+              <a href="#" class="aa-link"><span class="fa fa-link"></span></a>
+            </div>
+          </div>
+          </li>
+
+          &nbsp;
+
+          <li class="col-md-4 col-sm-6 col-xs-12 mix lab" style="display: inline-block;">
+          <div class="mu-single-gallery-img">
+            <a href="#"><img alt="img" src="pic.vid/test-9.jpg"></a>
+          </div>
+          <div class="mu-single-gallery-info">
+            <div class="mu-single-gallery-info-inner">
+              <h4>Image Title</h4>
+              <p>....</p>
+              <a href="pic.vid/test.jpg" data-fancybox-group="gallery" class="fancybox"><span class="fa fa-eye"></span></a>
+              <a href="#" class="aa-link"><span class="fa fa-link"></span></a>
+            </div>
+          </div>
+          </li>
+
+          &nbsp;
+
+          <li class="col-md-4 col-sm-6 col-xs-12 mix lab" style="display: inline-block;">
+          <div class="mu-single-gallery-img">
+            <a href="#"><img alt="img" src="pic.vid/test-10.jpg"></a>
+          </div>
+          <div class="mu-single-gallery-info">
+            <div class="mu-single-gallery-info-inner">
+              <h4>Image Title</h4>
+              <p>....</p>
+              <a href="pic.vid/test.jpg" data-fancybox-group="gallery" class="fancybox"><span class="fa fa-eye"></span></a>
+              <a href="pic.vid/test.jpg" class="aa-link"><span class="fa fa-link"></span></a>
+            </div>
+          </div>
+          </li>
+
+        
+    </div>
+    </div>
+    </div>
+     <!--Back to top button start-->
+
+
+
+ <!--Back to top button end-->
+    </section>             <!--AGAIN-->               <!--pic chai 370px × 220px ma hunu paryo-->
+
+
+
+
+
+    <style>
+      h4{
+        color: #fff;
+        background: transparent;
+        backdrop-filter: blur(10px);
+      }
+      .spinner {
+  font-size: 28px;
+  position: relative;
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+}
+
+.spinner.center {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+}
+
+.spinner .spinner-blade {
+  position: absolute;
+  left: 0.4629em;
+  bottom: 0;
+  width: 0.074em;
+  height: 0.2777em;
+  border-radius: 0.0555em;
+  background-color: transparent;
+  -webkit-transform-origin: center -0.2222em;
+  -ms-transform-origin: center -0.2222em;
+  transform-origin: center -0.2222em;
+  animation: spinner-fade9234 1s infinite linear;
+}
+
+.spinner .spinner-blade:nth-child(1) {
+  -webkit-animation-delay: 0s;
+  animation-delay: 0s;
+  -webkit-transform: rotate(0deg);
+  -ms-transform: rotate(0deg);
+  transform: rotate(0deg);
+}
+
+.spinner .spinner-blade:nth-child(2) {
+  -webkit-animation-delay: 0.083s;
+  animation-delay: 0.083s;
+  -webkit-transform: rotate(30deg);
+  -ms-transform: rotate(30deg);
+  transform: rotate(30deg);
+}
+
+.spinner .spinner-blade:nth-child(3) {
+  -webkit-animation-delay: 0.166s;
+  animation-delay: 0.166s;
+  -webkit-transform: rotate(60deg);
+  -ms-transform: rotate(60deg);
+  transform: rotate(60deg);
+}
+
+.spinner .spinner-blade:nth-child(4) {
+  -webkit-animation-delay: 0.249s;
+  animation-delay: 0.249s;
+  -webkit-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  transform: rotate(90deg);
+}
+
+.spinner .spinner-blade:nth-child(5) {
+  -webkit-animation-delay: 0.332s;
+  animation-delay: 0.332s;
+  -webkit-transform: rotate(120deg);
+  -ms-transform: rotate(120deg);
+  transform: rotate(120deg);
+}
+
+.spinner .spinner-blade:nth-child(6) {
+  -webkit-animation-delay: 0.415s;
+  animation-delay: 0.415s;
+  -webkit-transform: rotate(150deg);
+  -ms-transform: rotate(150deg);
+  transform: rotate(150deg);
+}
+
+.spinner .spinner-blade:nth-child(7) {
+  -webkit-animation-delay: 0.498s;
+  animation-delay: 0.498s;
+  -webkit-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  transform: rotate(180deg);
+}
+
+.spinner .spinner-blade:nth-child(8) {
+  -webkit-animation-delay: 0.581s;
+  animation-delay: 0.581s;
+  -webkit-transform: rotate(210deg);
+  -ms-transform: rotate(210deg);
+  transform: rotate(210deg);
+}
+
+.spinner .spinner-blade:nth-child(9) {
+  -webkit-animation-delay: 0.664s;
+  animation-delay: 0.664s;
+  -webkit-transform: rotate(240deg);
+  -ms-transform: rotate(240deg);
+  transform: rotate(240deg);
+}
+
+.spinner .spinner-blade:nth-child(10) {
+  -webkit-animation-delay: 0.747s;
+  animation-delay: 0.747s;
+  -webkit-transform: rotate(270deg);
+  -ms-transform: rotate(270deg);
+  transform: rotate(270deg);
+}
+
+.spinner .spinner-blade:nth-child(11) {
+  -webkit-animation-delay: 0.83s;
+  animation-delay: 0.83s;
+  -webkit-transform: rotate(300deg);
+  -ms-transform: rotate(300deg);
+  transform: rotate(300deg);
+}
+
+.spinner .spinner-blade:nth-child(12) {
+  -webkit-animation-delay: 0.913s;
+  animation-delay: 0.913s;
+  -webkit-transform: rotate(330deg);
+  -ms-transform: rotate(330deg);
+  transform: rotate(330deg);
+}
+
+@keyframes spinner-fade9234 {
+  0% {
+    background-color: #69717d;
+  }
+
+  100% {
+    background-color: transparent;
+  }
+}
+    </style>
+    <script>
+      window.addEventListener('load', function() {
+    var loader = document.getElementById('loader');
+    var content = document.getElementById('content');
+
+    // Simulate a delay (e.g., loading data from server)
+    setTimeout(function() {
+        loader.style.display = 'none';
+    }, 100); // Adjust the delay as needed (1000ms = 1 seconds)
+});
+
+    </script>
+        <div id="loader" class="spinner center">
+          <div class="spinner-blade"></div>
+          <div class="spinner-blade"></div>
+          <div class="spinner-blade"></div>
+          <div class="spinner-blade"></div>
+          <div class="spinner-blade"></div>
+          <div class="spinner-blade"></div>
+          <div class="spinner-blade"></div>
+          <div class="spinner-blade"></div>
+          <div class="spinner-blade"></div>
+          <div class="spinner-blade"></div>
+          <div class="spinner-blade"></div>
+          <div class="spinner-blade"></div>
+      </div>
+</body>
+<a href="#" class="back-to-top">
+  <span class="material-symbols-outlined">
+    keyboard_double_arrow_up
+    </span>
+ </a>
+<footer>
+  <div class="footer-container">
+      <div class="footer-section">
+          <img src="pic.vid/scl logo.jpg"  class="school-logo">
+      </div>
+      <div class="footer-section">
+        <h3><i class="fa-solid fa-location-dot"></i> Location</h3>
+        <p>Purano naikap-13, Kathmandu</p>
+        <br>
+          <h3>Contact Us</h3>
+          <p><i class="fa-solid fa-phone"></i> Phone: 
+            <br>
+          +977 00-0000000, 00-0000000</p>
+          <p><i class="fa-solid fa-envelope"></i> Email: 
+            <br>
+            info@school.com</p>
+      </div>
+      <div class="footer-section">
+          <h3>Menu</h3>
+          <ul>
+              <li><a href="index.html"><i class="fa-solid fa-house"></i> Home</a></li> <br>
+              <li><a href="Student Enquiry Form.html"><i class="fa-solid fa-table-list"></i> Student Enquiry form</a></li><br>
+              <li><a href="Admission form.html"><i class="fa-solid fa-table-list"></i> Admission form</a></li><br>
+
+          </ul>
+      </div>
+      <div class="footer-section">
+
+          <h3>Follow Us</h3>
+
+          <div class="social-media">
+            
+          </b>
+              <br>
+          <a href="#">
+              
+              <i class="fab fa-facebook"></i> 
+          </a>
+          
+          <a href="#">
+              
+              <i class="fa-brands fa-square-instagram"></i>
+          </a>
+
+          </div>
+
+      </div>
+
+      <div class="footer-section">
+          <h3>School Hours</h3>
+          <p>Sunday-Friday – 10:00 AM to 4:00 PM / 8:30 AM to 4:10 PM</p>
+
+      </div>
+
+      <div class="footer-section">
+        <h3>© Vidya Mandir School. All rights reserved</h3>
+        
+    
+    </div>
+
+  </div>
+
+</footer>
+
+
+</html>
